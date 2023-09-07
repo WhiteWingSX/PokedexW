@@ -48,7 +48,7 @@ const PokemonApi = () => {
         <div>
             <NavegateBar/>
             <h1>Pokédex</h1>
-            <SearchPokemon onSearch={handleSearch} />
+            <SearchPokemon onSearch={handleSearch}/>
             <PokemonList allPokemonData={allPokemonData} pokeSearch={pokeSearch}/>
             {loading && <p>Loading...</p>}
             <footer>

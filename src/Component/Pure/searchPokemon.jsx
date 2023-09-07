@@ -11,16 +11,16 @@ const SearchPokemon = ({ onSearch }) => {
     const [pokeSearch, setPokeSearch] = useState('');
 
     const handleSearch = (event) => {
-        const newPokeSearch = event.target.value;
-        setPokeSearch(newPokeSearch);
-        onSearch(newPokeSearch); // Llama a la función de búsqueda del componente padre
+        const query = event.target.value;
+        setPokeSearch(query);
+        onSearch(query);
     };
 
     return (
         <div>
             <StyledSearchInput
                 type="text"
-                placeholder="Search Pokémon..."
+                placeholder="Search Pokémon by name or number..."
                 value={pokeSearch}
                 onChange={handleSearch}
             />

@@ -20,24 +20,34 @@ const StyledPokemonLi = styled.li`
   margin: 0px 10px;
 `;
 
+const NoResultsMessage = styled.div`
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+`;
+
 const PokemonList = ({ allPokemonData, pokeSearch }) => {
     const filteredPokemon = allPokemonData.filter((pokemon) =>
-        pokemon.name && pokemon.name.toLowerCase().includes(pokeSearch.toLowerCase())
+        (pokemon.name && pokemon.name.toLowerCase().includes(pokeSearch.toLowerCase())) ||
+        (pokemon.pokedexNumber && pokemon.pokedexNumber.toString().includes(pokeSearch.toLowerCase()))
     );
 
     return (
         <StyledPokemonList>
-            <h2>Pokémon List</h2>
-            <StyledPokemonUl>
-                {filteredPokemon.map((pokemon) => (
-                    <StyledPokemonLi key={pokemon.name}>
-                        <Link to={`/pokemon/${pokemon.name}`}>
-                            <img src={pokemon.image} alt={`Image of ${pokemon.name}`} />
-                            #{pokemon.pokedexNumber} - {pokemon.name}
-                        </Link>
-                    </StyledPokemonLi>
-                ))}
-            </StyledPokemonUl>
+            {filteredPokemon.length === 0 ? (
+                <NoResultsMessage>Pokemon Not Found.</NoResultsMessage>
+            ) : (
+                <StyledPokemonUl>
+                    {filteredPokemon.map((pokemon) => (
+                        <StyledPokemonLi key={pokemon.name}>
+                            <Link to={`/pokemon/${pokemon.name}`}>
+                                <img src={pokemon.image} alt={`Image of ${pokemon.name}`} />
+                                #{pokemon.pokedexNumber} - {pokemon.name}
+                            </Link>
+                        </StyledPokemonLi>
+                    ))}
+                </StyledPokemonUl>
+            )}
         </StyledPokemonList>
     );
 };

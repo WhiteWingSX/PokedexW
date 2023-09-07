@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import NavegateBar from '../../Home/NavegateBar';
 import FootCopy from '../../Home/Foot';
 
