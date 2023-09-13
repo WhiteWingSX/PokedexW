@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledSearchInput = styled.input`
+  margin-top: -52px;
+  position: fixed;
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  
+  input::placeholder{
+    text-align: center;
+  }
 `;
 
 const SearchPokemon = ({ onSearch }) => {
@@ -20,7 +28,7 @@ const SearchPokemon = ({ onSearch }) => {
         <div>
             <StyledSearchInput
                 type="text"
-                placeholder="Search Pokémon by name or number..."
+                placeholder="Search Pokémon by name/Id ..."
                 value={pokeSearch}
                 onChange={handleSearch}
             />

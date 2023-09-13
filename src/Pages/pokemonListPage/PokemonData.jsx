@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PokemonList from './pokemonList';
 import '../../Styles/Styles.css';
-import NavegateBar from '../../Home/NavegateBar';
 import FootCopy from '../../Home/Foot';
 import SearchPokemon from '../../Component/Pure/searchPokemon';
 
@@ -46,14 +45,17 @@ const PokemonApi = () => {
 
     return (
         <div>
-            <NavegateBar/>
-            <h1>Pokédex</h1>
-            <SearchPokemon onSearch={handleSearch}/>
-            <PokemonList allPokemonData={allPokemonData} pokeSearch={pokeSearch}/>
-            {loading && <p>Loading...</p>}
-            <footer>
-                <FootCopy/>
-            </footer>
+
+            {loading ?
+                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <p className='loadingText'>Loading Pokémon Data...</p>
+                </div>
+                :
+                <>
+                    <SearchPokemon onSearch={handleSearch}/>
+                    <PokemonList allPokemonData={allPokemonData} pokeSearch={pokeSearch} loading={loading}/>
+                </>
+            }
         </div>
     );
 };

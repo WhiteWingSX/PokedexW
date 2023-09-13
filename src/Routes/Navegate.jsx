@@ -1,13 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import '../Styles/generalStyle/Style.css'
 
 const StyledLink = styled.div`
   margin: 10px 10px;
+  
+  &:hover{
+    background-color: #de5834cc;
+  }
 `;
 
 const StyledNavegate = styled.div`
   display: flex;
+`;
+
+const StyledLinkTo = styled(Link)`
+text-decoration: none;
+color: #ffffff;
+
+  &:hover{
+    background-color: #de5834cc;
+  }
 `;
 
 const Navigation = () => {
@@ -15,13 +29,13 @@ const Navigation = () => {
         <nav>
             <StyledNavegate>
                 <StyledLink>
-                    <Link to="/">Home</Link>
+                    <StyledLinkTo to="/">Home</StyledLinkTo>
                 </StyledLink>
                 <StyledLink>
-                    <Link to="/pokemon-list">Pokemon</Link>
+                    <StyledLinkTo to="/pokemon-list">Pokemon</StyledLinkTo>
                 </StyledLink>
                 <StyledLink>
-                    <Link to="/info">Copyright</Link>
+                    <StyledLinkTo to="/info">Copyright</StyledLinkTo>
                 </StyledLink>
             </StyledNavegate>
         </nav>

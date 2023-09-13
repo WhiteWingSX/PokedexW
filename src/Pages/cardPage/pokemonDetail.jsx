@@ -3,10 +3,14 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import FootCopy from '../../Home/Foot';
 import styled from 'styled-components';
+import '../../Styles/CardStyle/style.css'
+import backupImageUrl from '../../Img/MissingImg2.png';
 
 const StyledImg = styled.img`
-  width: 350px;
-  height: 350px;
+  width: 100px;
+  height: 100px;
+  background-image: linear-gradient(to top, #1111bbbb, transparent);
+  border-radius: 100px;
 `;
     const PokemonDetail = () => {
         const { name } = useParams();
@@ -17,12 +21,16 @@ const StyledImg = styled.img`
         const [generation, setGeneration] = useState('');
         const [evolutions, setEvolutions] = useState([]);
         const [pokemonImageUrls, setPokemonImageUrls] = useState([]);
+        const [types, setTypes] = useState([]);
 
         useEffect(() => {
             async function fetchPokemonDetail() {
                 try {
                     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
                     setPokemon(response.data);
+
+                    const types = response.data.types.map((type) => type.type.name);
+                    setTypes(types);
                 } catch (error) {
                     console.error('Error fetching data:', error);
                 }
@@ -132,51 +140,87 @@ const StyledImg = styled.img`
 
     return (
         <div className="pokemon-detail">
-            <h2>Pokémon Details - {pokemon.name}</h2>
-            <p>Number: #{pokemon.id}</p>
+            <div className='styledCard'>
+            <div>
+                <h1 className='title'>{pokemon.name} N°{pokemon.id}</h1>
+                <h2 className='title'>{generation}</h2>
+            </div>
+            <div className='bodyCard'>
+                <div>
             <StyledImg
+                className='PokeImg'
                 src={imageUrl}
                 alt={pokemon.name}
                 onError={(e) => {
                     e.target.src = backupImageUrl;
                 }}
             />
-            <p>Type: {pokemon.types.map((type) => type.type.name).join(', ')}</p>
-            <p>Abilities: {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}</p>
-            <p>Height: {convertToMeters(pokemon.height)} meters</p>
-            <p>Weight: {(pokemon.weight / 10).toFixed(1)} kilograms</p>
-            <p>Description: {description}</p>
-            <p>Generation: {generation}</p>
-            <h3>Base Stats:</h3>
-            <ul>
-                {stats.map((stat) => (
-                    <li key={stat.stat.name}>
-                        {stat.stat.name}: {stat.base_stat}
-                    </li>
-                ))}
-            </ul>
-            <button onClick={handlePreviousClick}>Previous Pokémon</button>
-            <button onClick={handleNextClick}>Next Pokémon</button>
-            <button onClick={handleBackToListClick}>Back to Pokémon List</button>
-            <h3>Evolutions:</h3>
-            {evolutions.length > 1 ? (
-                <ul>
-                    {evolutions.map((evolution, index) => (
-                        <li key={index}>
-                            {evolution && (
-                                <Link to={`/pokemon/${evolution}`}>
-                                    <img src={pokemonImageUrls[index]} alt={evolution} />
-                                </Link>
-                            )}
+                    <h3 className="title">Type</h3>
+                    <div className="types-list">
+                        {types.map((type, index) => (
+                            <span key={index} className={`type ${type.toLowerCase()}`}>
+                  {type}
+                </span>
+                        ))}
+                    </div>
+
+                    <h3 className='title'>Abilities</h3>
+                    <p className='text'> {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}</p>
+
+
+            </div>
+                <div>
+                    <div className='order'>
+                        <div style={{flexDirection: 'column', padding: '0px 5px'}}>
+                    <h3 className='title'>Height</h3>
+                <p className='text'>{convertToMeters(pokemon.height)} Mts.</p>
+                    </div>
+                        <div style={{flexDirection: 'column', padding: '0px 5px'}}>
+                    <h3 className='title'>Weight</h3>
+                    <p className='text'>{(pokemon.weight / 10).toFixed(1)} Kgs.</p>
+                        </div>
+                </div>
+
+                    <div className='orderDes'>
+                <h3 className='title'>Description</h3>
+                    <p className='text'>{description}</p>
+                </div>
+
+                </div>
+
+
+            </div>
+                <h3 className='title'>Base Stats</h3>
+                <ul className='textList'>
+                    {stats.map((stat) => (
+                        <li key={stat.stat.name}>
+                            {stat.stat.name}: {stat.base_stat}
                         </li>
                     ))}
                 </ul>
-            ) : (
-                <p>This Pokémon has no evolutions.</p>
-            )}
-            <footer>
-                <FootCopy />
-            </footer>
+
+                <h3 className='title'>Evolutions</h3>
+                {evolutions.length > 1 ? (
+                    <ul>
+                        {evolutions.map((evolution, index) => (
+                            <li key={index} className='squaList'>
+                                {evolution && (
+                                    <Link to={`/pokemon/${evolution}`}>
+                                        <img src={pokemonImageUrls[index]} alt={evolution} />
+                                    </Link>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>This Pokémon has no evolutions.</p>
+                )}
+        </div>
+            <div>
+            <button onClick={handlePreviousClick}>Previous</button>
+            <button onClick={handleBackToListClick}>Back to List</button>
+            <button onClick={handleNextClick}>Next</button>
+        </div>
         </div>
     );
 };

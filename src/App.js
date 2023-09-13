@@ -1,12 +1,16 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import PokemonApi from './Pages/pokemonListPage/PokemonData'
+import './Styles/generalStyle/Style.css'
 import Routes from './Routes/LinkPages';
+import FootCopy from './Home/Foot';
 
 function App() {
   return (
-    <div className="App">
+    <div>
         <Routes/>
+        <footer>
+            <FootCopy/>
+        </footer>
     </div>
   );
 }

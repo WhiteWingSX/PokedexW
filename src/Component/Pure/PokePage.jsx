@@ -1,25 +1,18 @@
 import React from 'react';
+import '../../Styles/generalStyle/Style.css'
+import Routes from '../../Routes/LinkPages';
+import FootCopy from '../../Home/Foot';
+import NavegateBar from '../../Home/NavegateBar';
 
-const Pagination = ({ currentPage, setCurrentPage }) => {
-    const handlePreviousPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-        }
-    };
 
-    const handleNextPage = () => {
-        setCurrentPage(currentPage + 1);
-    };
-
+function Main() {
     return (
-        <div className="pagination">
-            <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-                Previous
-            </button>
-            <span>Page {currentPage}</span>
-            <button onClick={handleNextPage}>Next</button>
+        <div className="App">
+            <NavegateBar/>
+            <Routes/>
+            <FootCopy/>
         </div>
     );
-};
+}
 
-export default Pagination;
+export default Main;
