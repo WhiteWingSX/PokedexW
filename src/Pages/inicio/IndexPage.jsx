@@ -20,7 +20,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className='text-base' style={{padding: '180px 10px', alignItems: 'center'}}>
+        <div className='text-base' style={{padding: '30px 10px', alignItems: 'center'}}>
             <h1>Wellcome Trainer</h1>
             <p>We are present de new generation of pokedex, you have access to information of 1010 Pokemons</p>
             <StyledButton onClick={handleGoToListClick}>Go to Pokedex</StyledButton>

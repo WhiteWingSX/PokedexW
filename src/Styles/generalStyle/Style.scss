@@ -11,7 +11,7 @@ body {
   background-image: linear-gradient(to bottom, #cb1413, #de5834aa);
   //background-size: cover;
   //background-position: center;
-  position: fixed; /* Establece la posición fija */
+  position: static; /* Establece la posición fija */
   top: 0; /* Coloca el texto en la parte superior */
   left: 0; /* Alinea el texto a la izquierda */
   width: 100%; /* Establece el ancho al 100% para cubrir toda la pantalla */
@@ -36,7 +36,8 @@ input{
 }
 
 .loadingText {
-  margin-top: 280px;
+  margin-top: 100px;
+  margin-bottom: 131px;
   font-size: 18px;
   color: gray;
   font-weight: bold;

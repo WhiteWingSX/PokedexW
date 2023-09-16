@@ -1,10 +1,13 @@
 .styledCard {
-  border: 2px solid #000000;
   background-image: linear-gradient(to top, #1234cccc, transparent);
   border-radius: 20px;
-  margin: 150px 0px;
   padding: 0px;
-  width: 315px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 52em;
+  left: 50%;
+  justify-content: center;
 }
 
 .bodyCard {
@@ -60,6 +63,12 @@
   justify-content: center;
 }
 
+.centerBtn {
+  margin: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 //Types
 
 .type {
@@ -68,6 +77,35 @@
   border: 2px solid li;
   border-bottom: 2px solid #aaaaaa;
   border-radius: 5px;
+}
+
+.imgs {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 100px;
+  border: none;
+  border-bottom: 2px solid #5689ff;
+  background-image: linear-gradient(to top, #5689ffff, transparent);
+}
+
+.imgsBack {
+  rotate: 180deg;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  border: none;
+  border-top: 2px solid #5689ff;
+  background-image: linear-gradient(to bottom, #5689ffff, transparent);
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grass {

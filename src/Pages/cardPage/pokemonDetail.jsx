@@ -6,12 +6,68 @@ import styled from 'styled-components';
 import '../../Styles/CardStyle/style.css'
 import backupImageUrl from '../../Img/MissingImg2.png';
 
+const arrow = require('../../Img/arrow.webp')
+const menu = require('../../Img/Menu2.webp')
+
 const StyledImg = styled.img`
   width: 100px;
   height: 100px;
   background-image: linear-gradient(to top, #1111bbbb, transparent);
   border-radius: 100px;
 `;
+
+const StyledImg2 = styled.img`
+  
+  width: 88px;
+  height: 88px;
+  margin: 3px;
+  border-radius: 100px;
+  background-image: linear-gradient(to top, #1111bbbb, transparent);
+  border-bottom: 4px solid #111188;
+`;
+
+const StatsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+  grid-template-rows: repeat(3, auto); /* Tres filas de alto automático */
+  gap: 10px; /* Espacio entre elementos */
+`;
+
+const StatItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc; /* Línea divisoria entre elementos */
+  padding: 5px 10px;
+`;
+
+const StyledStatName = styled.span `
+  color: #dddddd;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+`;
+
+const StyledStat = styled.span `
+  color: #dddddd;
+  font-weight: bold;
+`;
+
+const StyledCenter = styled.div `
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+  width: 100px;
+`;
+
+const EvolutionsContainer = styled.div`
+  display: flex;
+  overflow-x: auto; /* Hace que las evoluciones se desplacen horizontalmente si se desbordan */
+  gap: 10px; /* Espacio entre evoluciones */
+  align-items: center; /* Centra verticalmente las evoluciones */
+`;
+
+const EvolutionItem = styled.div`
+  text-align: center;
+`;
+
     const PokemonDetail = () => {
         const { name } = useParams();
         const navigate = useNavigate();
@@ -167,7 +223,6 @@ const StyledImg = styled.img`
                     <h3 className='title'>Abilities</h3>
                     <p className='text'> {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}</p>
 
-
             </div>
                 <div>
                     <div className='order'>
@@ -190,37 +245,40 @@ const StyledImg = styled.img`
 
 
             </div>
-                <h3 className='title'>Base Stats</h3>
-                <ul className='textList'>
-                    {stats.map((stat) => (
-                        <li key={stat.stat.name}>
-                            {stat.stat.name}: {stat.base_stat}
-                        </li>
-                    ))}
-                </ul>
+                <div>
+                    <h3 className='title'>Base Stats</h3>
+                    <StatsContainer>
+                        {stats.map((stat) => (
+                            <StatItem key={stat.stat.name}>
+                                <StyledStatName>{stat.stat.name}</StyledStatName>
+                                <StyledStat>{stat.base_stat}</StyledStat>
+                            </StatItem>
+                        ))}
+                    </StatsContainer>
+                </div>
 
                 <h3 className='title'>Evolutions</h3>
                 {evolutions.length > 1 ? (
-                    <ul>
+                    <EvolutionsContainer>
                         {evolutions.map((evolution, index) => (
-                            <li key={index} className='squaList'>
+                            <EvolutionItem key={index}>
                                 {evolution && (
                                     <Link to={`/pokemon/${evolution}`}>
-                                        <img src={pokemonImageUrls[index]} alt={evolution} />
+                                        <StyledImg2 src={pokemonImageUrls[index]} alt={evolution} />
                                     </Link>
                                 )}
-                            </li>
+                            </EvolutionItem>
                         ))}
-                    </ul>
+                    </EvolutionsContainer>
                 ) : (
                     <p>This Pokémon has no evolutions.</p>
                 )}
         </div>
-            <div>
-            <button onClick={handlePreviousClick}>Previous</button>
-            <button onClick={handleBackToListClick}>Back to List</button>
-            <button onClick={handleNextClick}>Next</button>
-        </div>
+            <StyledCenter>
+            <button className='btn' onClick={handlePreviousClick}><img className='imgsBack' src={arrow} alt='Previus'/></button>
+            <button className='btn' onClick={handleBackToListClick}><img className='imgs' src={menu} alt='Menu'/></button>
+            <button className='btn' onClick={handleNextClick}><img className='imgs' src={arrow} alt='next'/></button>
+        </StyledCenter>
         </div>
     );
 };

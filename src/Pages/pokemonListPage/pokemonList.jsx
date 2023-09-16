@@ -6,7 +6,7 @@ const StyledPokemonList = styled.div`
   
   text-align: right;
   overflow-x: auto;
-  margin-top: 63%;
+  margin-top: 11.4%;
   width: 100%;
 `;
 
@@ -29,9 +29,12 @@ const NoResultsMessage = styled.div`
   color: gray;
   font-weight: bold;
   margin-top: 20%;
+  margin-bottom: 29.3%;
 `;
 
 const StyledLink = styled(Link)`
+  
+  position: relative;
   text-decoration: none;
   border-radius: 10px;
   background-image: linear-gradient(to top, #1234cccc, transparent);

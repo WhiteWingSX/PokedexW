@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledSearchInput = styled.input`
-  margin-top: -52px;
-  position: fixed;
-  width: 100%;
+  position: static;
+  width: 93.6%;
   padding: 10px;
   background: transparent;
   border: none;

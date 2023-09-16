@@ -4,7 +4,7 @@ import FootCopy from '../../Home/Foot';
 
 const EndPage = () => {
     return (
-        <div className='text-base' style={{padding: '150px 10px', alignItems: 'center'}}>
+        <div className='text-base' style={{padding: '0px 8px', marginBottom: '64px', alignItems: 'center'}}>
             <h1>Site information</h1>
             <h5>An open source site created by
                 Bastian Rozas Neira for personal learning purposes.
