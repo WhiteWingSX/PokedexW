@@ -11,6 +11,23 @@ const StyledSearchInput = styled.input`
   
   input::placeholder{
     text-align: center;
+    
+    }  
+  
+  @media (min-width: 576px) {
+    width: 96.6%;
+  }
+
+  @media (min-width: 768px) {
+    width: 97.4%;
+  }
+
+  @media (min-width: 998px) {
+    width: 98%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 98.3%;
   }
 `;
 

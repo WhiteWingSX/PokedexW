@@ -1,24 +1,16 @@
 body {
   background: url("../../Img/PokeWall.jpg");
   background-size: cover;
-  //background-position: center;
 }
 
 .navegate-bar {
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
   background-image: linear-gradient(to bottom, #cb1413, #de5834aa);
-  //background-size: cover;
-  //background-position: center;
-  position: static; /* Establece la posición fija */
-  top: 0; /* Coloca el texto en la parte superior */
-  left: 0; /* Alinea el texto a la izquierda */
-  width: 100%; /* Establece el ancho al 100% para cubrir toda la pantalla */
-  //background-color: #333; /* Color de fondo del texto superior */
-  color: #fff; /* Color del texto */
-  text-align: center; /* Alinea el texto al centro */
-  //padding: 10px;
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
 }
 
 .text-base{
@@ -42,24 +34,3 @@ input{
   color: gray;
   font-weight: bold;
 }
-
-//.pokemon-list {
-//  list-style: none;
-//  padding: 0;
-//
-//  &-item {
-//    padding: 8px;
-//    border-bottom: 1px solid #ddd;
-//    cursor: pointer;
-//
-//    &:hover {
-//      background-color: #f0f0f0;
-//    }
-//  }
-//}
-//
-//// Estilos para el detalle de Pokémon
-//.pokemon-detail {
-//  border: 1px solid #ddd;
-//  padding: 16px;
-//}

@@ -49,6 +49,7 @@ const PokemonApi = () => {
             {loading ?
                 <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <p className='loadingText'>Loading Pokémon Data...</p>
+                    <FootCopy/>
                 </div>
                 :
                 <>

@@ -2,6 +2,7 @@ import React from 'react';
 import './../../Styles/generalStyle/Style.css'
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import FootCopy from '../../Home/Foot';
 
 const StyledButton = styled.button`
   border: none;
@@ -24,6 +25,7 @@ const HomePage = () => {
             <h1>Wellcome Trainer</h1>
             <p>We are present de new generation of pokedex, you have access to information of 1010 Pokemons</p>
             <StyledButton onClick={handleGoToListClick}>Go to Pokedex</StyledButton>
+            <FootCopy/>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import FootCopy from '../../Home/Foot';
 
 const StyledPokemonList = styled.div`
   
@@ -8,6 +9,14 @@ const StyledPokemonList = styled.div`
   overflow-x: auto;
   margin-top: 11.4%;
   width: 100%;
+
+  @media (min-width: 768px) {
+    margin-top: 8%;;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 5%;
+  }
 `;
 
 const StyledPokemonUl = styled.ul`
@@ -64,6 +73,7 @@ const StyledImg = styled.img`
   border-radius: 100px;
   background-image: linear-gradient(to top, #1111bbbb, transparent);
   border-bottom: 4px solid #111188;
+  
 `;
 
 const PokemonList = ({ allPokemonData, pokeSearch, loading }) => {
@@ -95,6 +105,7 @@ const PokemonList = ({ allPokemonData, pokeSearch, loading }) => {
                     ))}
                 </StyledPokemonUl>
             )}
+            <FootCopy/>
         </StyledPokemonList>
     );
 };

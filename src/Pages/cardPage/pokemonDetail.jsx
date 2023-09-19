@@ -4,7 +4,7 @@ import axios from 'axios';
 import FootCopy from '../../Home/Foot';
 import styled from 'styled-components';
 import '../../Styles/CardStyle/style.css'
-import backupImageUrl from '../../Img/MissingImg2.png';
+
 
 const arrow = require('../../Img/arrow.webp')
 const menu = require('../../Img/Menu2.webp')
@@ -14,6 +14,12 @@ const StyledImg = styled.img`
   height: 100px;
   background-image: linear-gradient(to top, #1111bbbb, transparent);
   border-radius: 100px;
+  
+  @media (min-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+  
 `;
 
 const StyledImg2 = styled.img`
@@ -28,15 +34,15 @@ const StyledImg2 = styled.img`
 
 const StatsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
-  grid-template-rows: repeat(3, auto); /* Tres filas de alto automático */
-  gap: 10px; /* Espacio entre elementos */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 10px;
 `;
 
 const StatItem = styled.li`
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #ccc; /* Línea divisoria entre elementos */
+  border-bottom: 1px solid #ccc;
   padding: 5px 10px;
 `;
 
@@ -46,6 +52,7 @@ const StyledStatName = styled.span `
 `;
 
 const StyledStat = styled.span `
+  justify-content: center;
   color: #dddddd;
   font-weight: bold;
 `;
@@ -53,15 +60,16 @@ const StyledStat = styled.span `
 const StyledCenter = styled.div `
   display: flex;
   justify-content: center;
-  margin: 25px auto;
+  margin: 75px auto;
   width: 100px;
 `;
 
 const EvolutionsContainer = styled.div`
   display: flex;
-  overflow-x: auto; /* Hace que las evoluciones se desplacen horizontalmente si se desbordan */
-  gap: 10px; /* Espacio entre evoluciones */
-  align-items: center; /* Centra verticalmente las evoluciones */
+  overflow-x: auto;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 `;
 
 const EvolutionItem = styled.div`
@@ -279,6 +287,9 @@ const EvolutionItem = styled.div`
             <button className='btn' onClick={handleBackToListClick}><img className='imgs' src={menu} alt='Menu'/></button>
             <button className='btn' onClick={handleNextClick}><img className='imgs' src={arrow} alt='next'/></button>
         </StyledCenter>
+            <div style={{position: 'sticky'}}>
+            <FootCopy/>
+        </div>
         </div>
     );
 };

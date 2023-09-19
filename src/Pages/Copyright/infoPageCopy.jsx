@@ -1,5 +1,4 @@
 import React from 'react';
-import NavegateBar from '../../Home/NavegateBar';
 import FootCopy from '../../Home/Foot';
 
 const EndPage = () => {
@@ -15,6 +14,8 @@ const EndPage = () => {
                 and the evolutionary tree of the species.</h5>
 
             <p>Explore the world of Pokémon!</p>
+            <FootCopy/>
+
         </div>
     );
 };
