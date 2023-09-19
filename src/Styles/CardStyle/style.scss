@@ -1,0 +1,199 @@
+.styledCard {
+  background-image: linear-gradient(to top, #1234cccc, transparent);
+  border-radius: 20px;
+  padding: 0px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 52em;
+  left: 50%;
+  justify-content: center;
+}
+
+.bodyCard {
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+}
+
+.order {
+  display: flex;
+  justify-content: center;
+}
+
+.orderDes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+
+.PokeImg {
+  margin: 10px;
+}
+
+.title {
+  color: #dddddd;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-align: center;
+  justify-content: center;
+}
+
+.text {
+  color: #dddddd;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+}
+
+.textList {
+  color: #dddddd;
+  font-weight: bold;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.TypeSqua {
+  border: 1px solid #000000
+}
+
+.squaList {
+  justify-content: center;
+}
+
+.centerBtn {
+  margin: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//Types
+
+.type {
+  padding: 5px 10px;
+  margin: 5px;
+  border: 2px solid li;
+  border-bottom: 2px solid #aaaaaa;
+  border-radius: 5px;
+}
+
+.imgs {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 100px;
+  border: none;
+  border-bottom: 2px solid #5689ff;
+  background-image: linear-gradient(to top, #5689ffff, transparent);
+}
+
+.imgsBack {
+  rotate: 180deg;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  border: none;
+  border-top: 2px solid #5689ff;
+  background-image: linear-gradient(to bottom, #5689ffff, transparent);
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grass {
+  background-image: linear-gradient(to top, #12dd34, #348856);
+  color: #ffffff;
+}
+
+.fire {
+  background-image: linear-gradient(to top, #ff8c00, #ff4500);
+  color: #ffffff;
+}
+
+.water {
+  background-image: linear-gradient(to top, #1976d2, #2196f3);
+  color: #ffffff;
+}
+
+.bug {
+  background-image: linear-gradient(to top, #7b7f3f, #a8b820);
+  color: #ffffff;
+}
+
+.electric {
+  background-image: linear-gradient(to top, #ffcc29, #f3d23b);
+  color: #000000;
+}
+
+.psychic {
+  background-image: linear-gradient(to top, #f8485e, #ff71a7);
+  color: #ffffff;
+}
+
+.rock {
+  background-image: linear-gradient(to top, #a38b4d, #786848);
+  color: #ffffff;
+}
+
+.ground {
+  background-image: linear-gradient(to top, #e0b564, #dd9c41);
+  color: #ffffff;
+}
+
+.ice {
+  background-image: linear-gradient(to top, #6fc3df, #7f98a8);
+  color: #ffffff;
+}
+
+.fighting {
+  background-image: linear-gradient(to top, #b41d00, #d32f2f);
+  color: #ffffff;
+}
+
+.poison {
+  background-image: linear-gradient(to top, #ae6ac4, #9d5ca6);
+  color: #ffffff;
+}
+
+.ghost {
+  background-image: linear-gradient(to top, #774aa4, #945b9c);
+  color: #ffffff;
+}
+
+.steel {
+  background-image: linear-gradient(to top, #8e8e8e, #b8b8b8);
+  color: #000000;
+}
+
+.normal {
+  background-image: linear-gradient(to top, #bcbcbc, #d8d8d8);
+  color: #000000;
+}
+
+.flying {
+  background-image: linear-gradient(to top, #a7b1eb, #879dd1);
+  color: #000000;
+}
+
+.dark {
+  background-image: linear-gradient(to top, #5e5e5e, #333333);
+  color: #ffffff;
+}
+
+.fairy {
+  background-image: linear-gradient(to top, #ff7ace, #ff4d6e);
+  color: #ffffff;
+}
+
+.dragon {
+  background-image: linear-gradient(to top, #7038f8, #5c2b9b);
+  color: #ffffff;
+}

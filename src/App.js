@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import PokemonApi from './Component/Pure/PokemonData'
+import React from 'react';
+import './Styles/generalStyle/Style.css'
+import Routes from './Routes/LinkPages';
 
 function App() {
   return (
-    <div className="App">
-      <PokemonApi></PokemonApi>
+    <div>
+        <Routes/>
     </div>
   );
 }

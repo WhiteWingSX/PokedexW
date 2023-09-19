@@ -1,0 +1,36 @@
+body {
+  background: url("../../Img/PokeWall.jpg");
+  background-size: cover;
+}
+
+.navegate-bar {
+  background-image: linear-gradient(to bottom, #cb1413, #de5834aa);
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.text-base{
+  color: #dddddd;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-align: center;
+}
+
+input{
+  &::placeholder{
+    text-align: center;
+    font-weight: bold;
+    color: #f0f0f0cc;
+  }
+}
+
+.loadingText {
+  margin-top: 100px;
+  margin-bottom: 131px;
+  font-size: 18px;
+  color: gray;
+  font-weight: bold;
+}

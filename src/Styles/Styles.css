@@ -1,20 +1,14 @@
-/* styles.css */
 .pokemon-list {
     list-style: none;
     padding: 0;
 }
 
 .pokemon-list-item {
-    padding: 8px;
+    padding: 0px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
 }
 
 .pokemon-list-item:hover {
     background-color: #f0f0f0;
-}
-
-.pokemon-detail {
-    border: 1px solid #ddd;
-    padding: 16px;
 }
